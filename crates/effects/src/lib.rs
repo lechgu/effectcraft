@@ -84,7 +84,7 @@ pub use color_fx::{COLORAMA_PRESETS, ColoramaPalette};
 pub use color2::{Curve, auto_correct_settings, color_link_mode, color_link_sample, equalize_tables, luma_clip_points, shadow_highlight_amounts};
 pub use color3::OffsetCurve;
 pub use distort::{transform_grow, transform_matrix_px, transform_shutter};
-pub use distort2::{MAGNIFY_MODES, bezier_grid, parse_mesh};
+pub use distort2::{MAGNIFY_MODES, bezier_grid, parse_mesh, turbulent_amount_px};
 pub use distort3::{RESHAPE_POINTS, ReshapeSetup, SmearSetup, cc_smear_pad, reshape_setup, smear_setup, warp_inverse_map};
 pub use distort4::liquify_mesh;
 use effectcraft_keyframe::Value;
@@ -107,12 +107,12 @@ pub use generate3::{
     Coverage, MarksPlan, PaintPlan, Seg, eyedropper_color, marks_plan, paint_bucket_region, paint_plan, plan_reads_pixels, poly_segs, scribble_style,
 };
 pub use noise::{GrainLook, MEDIAN_MAX_RADIUS};
-pub use textfx::{BoltPlan, TextLook, TextPass, bolt_plan, text_passes};
+pub use textfx::{BoltPlan, TextLook, TextPass, bolt_plan, glyph_strokes, text_passes};
 pub use transition::{GridWipe, place_layer};
 // effectcraft-gpu fx_noise.
 pub use keying2::{InnerOuterPlan, inner_outer_plan};
 pub use noise::remove_grain_level;
-pub use noise3::{FractalGpu, NOISE_CELL, fractal_gpu};
+pub use noise3::{FractalGpu, NOISE_CELL, OCTAVE_SCALE_MAX, fractal_gpu, sub_scaling_ratio};
 pub use stylize3::{BumpLight, HexTile, bump_layer_id};
 pub use textfx::{TextLayer, text_layer};
 pub use time_fx::{PixelMotion, TimewarpPlan, TwStep, pmb_plan, posterized_time, time_frames, timewarp_crop, timewarp_plan};
@@ -131,7 +131,7 @@ pub use sim2::{
     CausticsSetup, FoamDisc, FoamEnv, FoamPlan, Piece, PiecePlan, PieceTex, PixelPlan, WavePlan, Waves, caustics_setup, foam_full_plan, piece_plan, pixel_plan,
     wave_world_plan,
 };
-pub use utility::{Lut, load_lut, lut_file, lut_files, lut_params};
+pub use utility::{Lut, cineon_gamma, cineon_gamma_scale, load_lut, lut_file, lut_files, lut_params};
 pub use vr::{equi_dir as vr_equi_dir, rotation as vr_rotation};
 
 /// Effect categories in Effects & Presets order.
